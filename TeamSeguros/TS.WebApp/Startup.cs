@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TS.WebApp.Data;
@@ -37,6 +38,16 @@ namespace TS.WebApp
 
             services.AddScoped<CustomerStore>();
             services.AddScoped<CarStore>();
+
+            services.AddDbContext<TSContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("TeamSeguros"),
+            sqlServerOptionsAction: sqlOptions =>
+            {
+                sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(10),
+                errorNumbersToAdd: null);
+            }));
 
 
         }
