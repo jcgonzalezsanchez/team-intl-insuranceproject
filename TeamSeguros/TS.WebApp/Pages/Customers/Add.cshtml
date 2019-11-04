@@ -4,5 +4,57 @@
     ViewData["Title"] = "Add";
 }
 
-<h1>Add</h1>
+<h3 class="center-align card-panel teal lighten-2">NEW CUSTOMER</h3>
 
+<div class="row">
+    <form class="col s12" method="post">
+        <div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input id="name" type="text" class="validate" asp-for="Customer.Name">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input id="last_name" type="text" class="validate" asp-for="Customer.LastName">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!--Esta pendiente definir el maestro de tipo documneto-->
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input id="document_type" type="text" class="validate" asp-for="Customer.DocumentType">
+                    <label for="document_type">Document type</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input id="nit" type="text" class="validate" asp-for="Customer.Nit">
+                    <label for="nit">Nit</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!--Esta pendiente cuadrar el calendario-->
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input id="birth_day" type="text" class="validate" asp-for="Customer.BirthDay">
+                    <label for="birth_day">Birth day</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input id="nit" type="text" class="validate" asp-for="Customer.City">
+                    <label for="nit">City of residence</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-align">
+            <button type="submit" class="waves-effect waves-light btn white-text blue darken-1">
+                Save
+            </button>
+            <a asp-page="./Index" class="waves-effect waves-light btn white-text blue darken-1">Return</a>
+        </div>
+
+    </form>
+</div>
