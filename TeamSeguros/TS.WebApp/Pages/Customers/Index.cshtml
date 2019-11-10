@@ -8,6 +8,8 @@
 
 <a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-1">Create new Customer</a>
 
+<!--Falta crear e boton rotornar al inicio-->
+
 <form method="post">
     <table class="responsive-table white-text deep-purple darken-1">
         <thead>
@@ -34,8 +36,14 @@
                 <!--Queda faltando la parte donde se carga la información del
                     carro cuando ya este costruida esa etapa-->
 
-                <!--Campo para el boton edit-->
+                <td>
+                    <a class="waves-effect waves-light btn white-text blue darken-1"
+                       asp-route-id="@item.Id"
+                       asp-page="Edit">
+                        Edit
+                    </a>
 
+                </td>
                 <td>
                     <button type="submit"
                             class="waves-effect waves-light btn white-text blue darken-1"
@@ -44,7 +52,9 @@
                         Delete
                     </button>
 
-                    <!--eSPACIO PARA EN BOTON CARS-->
+                    <a asp-page="../Cars/Add" class="waves-effect waves-light btn white-text blue darken-1">CREATE CAR</a>
+
+                    <!--Falta crear el boton crear carros-->
 
                 </td>
             </tr>

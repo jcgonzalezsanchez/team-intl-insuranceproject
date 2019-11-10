@@ -7,20 +7,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TS.WebApp.Data;
 using TS.WebApp.Models;
 
-namespace TS.WebApp.Pages.Customers
+namespace TS.WebApp.Pages.Cars
 {
-    public class EditModel : PageModel
+    public class AddModel : PageModel
     {
-        public CustomerStore CustomerStore { get; set; }
-        public EditModel(CustomerStore customerStore)
+        public CarStore CarStore { get; set; }
+        public AddModel(CarStore carStore)
         {
-            CustomerStore = customerStore;
+            CarStore = carStore;
         }
         [BindProperty]
-        public Customer Customer { get; set; }
-        public void OnGet(Guid id)
+        public Car Car { get; set; }
+
+        [BindProperty]
+        public Guid CustomerId { get; set; }
+        public void OnGet(Guid customerid)
         {
-            Customer = CustomerStore.GetCustomerById(id);
+            this.CustomerId = customerid;
         }
         public IActionResult OnPostAsync()
         {
@@ -28,8 +31,9 @@ namespace TS.WebApp.Pages.Customers
             {
                 return Page();
             }
-            //Edit
-            CustomerStore.EditCustomer(Customer);
+            //Add
+            Car.CustomerId = CustomerId;
+            CarStore.AddCar(Car);
             return RedirectToPage("./Index");
         }
     }

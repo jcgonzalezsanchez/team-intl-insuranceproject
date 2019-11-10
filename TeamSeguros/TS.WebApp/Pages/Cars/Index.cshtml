@@ -1,0 +1,51 @@
+﻿@page
+@model TS.WebApp.Pages.Cars.IndexModel
+@addTagHelper`*, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+
+<h2 class="center-align card-panel teal lighten-2">CARS</h2>
+
+<a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-1">Create new Car</a>
+
+<!--Falta crear e boton rotornar al inicio-->
+
+<form method="post">
+    <table class="responsive-table white-text deep-purple darken-1">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Cars)
+            {
+            <tr>
+                <td>@item.Brand</td>
+                <td>@item.Model</td>
+                <td>@item.Year</td>
+
+                <!--<td>
+        <a class="waves-effect waves-light btn white-text blue darken-1"
+           asp-route-id="@item.Id"
+           asp-page="Edit">
+            Edit
+        </a>
+
+    </td>-->
+                <td>
+                    <button type="submit"
+                            class="waves-effect waves-light btn white-text blue darken-1"
+                            asp-page-handler="delete"
+                            asp-route-id="@item.Id">
+                        Delete
+                    </button>
+
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</form>

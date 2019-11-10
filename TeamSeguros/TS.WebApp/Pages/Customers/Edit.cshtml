@@ -4,5 +4,64 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h3 class="center-align card-panel teal lighten-2">EDIT CUSTOMER</h3>
+
+<div class="row">
+    <form method="post" class="col s12">
+        <input hidden asp-for="Customer.Id" />
+        <div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input id="name" type="text" class="validate" asp-for="Customer.Name">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input id="last_name" type="text" class="validate" asp-for="Customer.LastName">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!--Esta pendiente definir el maestro de tipo documneto-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select asp-for="Customer.DocumentType">
+                        <option value="" disabled selected>Select document</option>
+                        <option value="Cédua">Cédula</option>
+                        <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                        <option value="Cédula de extrajeria">Cédula de extrajeria</option>
+                    </select>
+                </div>
+
+                <div class="input-field col s12 m6 l6">
+                    <input id="nit" type="text" class="validate" asp-for="Customer.Nit">
+                    <label for="nit">Nit</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!--Esta pendiente cuadrar el calendario-->
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input id="birthdate" asp-for="Customer.BirthDay" type="text" class="datepicker">
+                    <label for="birthdate">Birthdate</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input id="nit" type="text" class="validate" asp-for="Customer.City">
+                    <label for="nit">City of residence</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-align">
+            <button type="submit" class="waves-effect waves-light btn white-text blue darken-1">
+                Save
+            </button>
+            <a asp-page="./Index" class="waves-effect waves-light btn white-text blue darken-1">Return</a>
+        </div>
+
+    </form>
+</div>
 
