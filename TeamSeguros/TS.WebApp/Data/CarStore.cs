@@ -16,13 +16,13 @@ namespace TS.WebApp.Data
 
         internal void EditCar(Car car)
         {
-            Car currentComputer = GetCarById(car.Id);
-            currentComputer.Brand = car.Brand;
-            currentComputer.Model = car.Model;
-            currentComputer.Year = car.Year;
-            currentComputer.CustomerId = car.CustomerId;
+            Car currentCar = GetCarById(car.Id);
+            currentCar.Brand = car.Brand;
+            currentCar.Model = car.Model;
+            currentCar.Year = car.Year;
+            currentCar.CustomerId = car.CustomerId;
 
-            Context.Car.Update(currentComputer);
+            Context.Car.Update(currentCar);
             Context.SaveChanges();
         }
         internal Car GetCarById(Guid id)
@@ -40,8 +40,6 @@ namespace TS.WebApp.Data
             Context.Car.Remove(car);
             Context.SaveChanges();
         }
-
-        
 
         internal List<Car> GetCars()
         {

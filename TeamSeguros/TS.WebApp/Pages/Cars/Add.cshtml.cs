@@ -16,6 +16,7 @@ namespace TS.WebApp.Pages.Cars
         {
             CarStore = carStore;
         }
+
         [BindProperty]
         public Car Car { get; set; }
 
@@ -25,6 +26,7 @@ namespace TS.WebApp.Pages.Cars
         {
             this.CustomerId = customerid;
         }
+
         public IActionResult OnPostAsync()
         {
             if (!ModelState.IsValid)

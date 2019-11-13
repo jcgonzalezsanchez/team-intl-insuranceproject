@@ -4,7 +4,7 @@
     ViewData["Title"] = "Add";
 }
 
-<!--<h3 class="center-align card-panel teal lighten-2">NEW CAR</h3>-->
+<h3 class="center-align card-panel teal lighten-2">NEW CAR</h3>
 
 <div class="row">
     <form method="post" class="col s12">
@@ -12,15 +12,15 @@
         <div>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input id="name" type="text" class="validate" asp-for="Car.Brand">
-                    <label for="name">Brand</label>
+                    <input id="brand" type="text" class="validate" asp-for="Car.Brand">
+                    <label for="brand">Brand</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input id="last_name" type="text" class="validate" asp-for="Car.Model">
-                    <label for="last_name">Model</label>
+                    <input id="model" type="text" class="validate" asp-for="Car.Model">
+                    <label for="model">Model</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input id="year" asp-for="Car.Year" type="number" class="validate">
+                    <input id="year" type="number" class="validate" asp-for="Car.Year" >
                     <label for="year">Year</label>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             <button type="submit" class="waves-effect waves-light btn white-text blue darken-1">
                 Save
             </button>
-            <a asp-page="./Index" class="waves-effect waves-light btn white-text blue darken-1">Return</a>
+            <a asp-page="../Customers/Index" class="waves-effect waves-light btn white-text blue darken-1">Return</a>
         </div>
 
     </form>

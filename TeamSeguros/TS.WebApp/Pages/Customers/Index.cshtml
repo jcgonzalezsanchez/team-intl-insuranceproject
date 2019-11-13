@@ -6,10 +6,12 @@
 
 <h2 class="center-align card-panel teal lighten-2">CUSTOMERS</h2>
 
-<a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-1">Create new Customer</a>
+<div class="center-align">
+    <a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-1">Create new Customer</a>
 
-<!--Falta crear e boton rotornar al inicio-->
-
+    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-1">Return to begin</a>
+</div>
+<br />
 <form method="post">
     <table class="responsive-table white-text deep-purple darken-1">
         <thead>
@@ -34,7 +36,7 @@
                 <td>@item.City</td>
 
                 <!--Queda faltando la parte donde se carga la información del
-                    carro cuando ya este costruida esa etapa-->
+    carro cuando ya este costruida esa etapa-->
 
                 <td>
                     <a class="waves-effect waves-light btn white-text blue darken-1"
@@ -51,12 +53,16 @@
                             asp-route-id="@item.Id">
                         Delete
                     </button>
-
-                    <a asp-page="../Cars/Add" class="waves-effect waves-light btn white-text blue darken-1">CREATE CAR</a>
-
-                    <!--Falta crear el boton crear carros-->
-
                 </td>
+                <td>
+                    <a class="waves-effect waves-light btn white-text blue darken-1"
+                       asp-route-customerid="@item.Id"
+                       asp-page="../Cars/Add">
+                        CREATE CAR
+                    </a>
+                </td>
+
+                
             </tr>
             }
         </tbody>
