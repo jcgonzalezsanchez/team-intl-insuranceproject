@@ -1,10 +1,40 @@
 ﻿@page
-@model IndexModel
+@model TS.WebApp.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<div class="center-align">
+    <h1>Insurance Team</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@foreach (var item in Model.Customers)
+{
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.LastName</td>
+        <td>@item.DocumentType</td>
+        <td>@item.Nit</td>
+        <td>@item.BirthDay</td>
+        <td>@item.City</td>
+
+    </tr>
+    @if (item.Cars.Count < 1)
+    {
+
+    }
+    else
+    {
+        <div>
+            @foreach (var carro in item.Cars)
+            {
+                <div> @carro.Brand </div>
+                <div> @carro.Model </div>
+                <div> @carro.Year </div>
+            }
+        </div>
+
+    }
+
+}

@@ -12,6 +12,7 @@ namespace TS.WebApp.Pages.Customers
     public class AddModel : PageModel
     {
         public CustomerStore CustomerStore { get; set; }
+                
         public AddModel(CustomerStore customerStore)
         {
             CustomerStore = customerStore;

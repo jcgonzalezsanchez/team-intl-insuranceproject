@@ -4,23 +4,25 @@
     ViewData["Title"] = "Add";
 }
 
-<h3 class="center-align card-panel teal lighten-2">NEW CAR</h3>
+<div class="center-align">
+    <h3 class="card-panel teal lighten-2">New Car</h3>
+</div>
 
-<div class="row">
+<div class="row center-align">
     <form method="post" class="col s12">
         <input hidden asp-for="CustomerId" />
         <div>
             <div class="row">
-                <div class="input-field col s12 m6 l6">
+                <div class="input-field col s12 m3 l4">
                     <input id="brand" type="text" class="validate" asp-for="Car.Brand">
                     <label for="brand">Brand</label>
                 </div>
-                <div class="input-field col s12 m6 l6">
+                <div class="input-field col s12 m3 l4">
                     <input id="model" type="text" class="validate" asp-for="Car.Model">
                     <label for="model">Model</label>
                 </div>
-                <div class="input-field col s12 m6 l6">
-                    <input id="year" type="number" class="validate" asp-for="Car.Year" >
+                <div class="input-field col s12 m3 l4">
+                    <input id="year" type="number" class="validate" asp-for="Car.Year">
                     <label for="year">Year</label>
                 </div>
             </div>
