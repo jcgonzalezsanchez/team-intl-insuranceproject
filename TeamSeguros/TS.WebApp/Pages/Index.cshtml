@@ -5,36 +5,74 @@
 }
 
 <div class="center-align">
-    <h1>Insurance Team</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1>Sales</h1>
 </div>
 
-@foreach (var item in Model.Customers)
-{
-    <tr>
-        <td>@item.Name</td>
-        <td>@item.LastName</td>
-        <td>@item.DocumentType</td>
-        <td>@item.Nit</td>
-        <td>@item.BirthDay</td>
-        <td>@item.City</td>
+<div>
+    <a asp-page="./Customers/Add" class="waves-effect waves-light btn white-text blue darken-1">New Sale</a>
+</div>
 
-    </tr>
-    @if (item.Cars.Count < 1)
-    {
+<br />
 
-    }
-    else
-    {
-        <div>
-            @foreach (var carro in item.Cars)
+<form method="post">
+    <table class="responsive-table white-text deep-purple darken-1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>LastName</th>
+                <th>Document Type</th>
+                <th>Nit</th>
+                <th>BirthDay</th>
+                <th>City</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Options Customer</th>
+                <th>Options Car</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customers)
             {
-                <div> @carro.Brand </div>
-                <div> @carro.Model </div>
-                <div> @carro.Year </div>
-            }
-        </div>
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
+                <td>@item.DocumentType</td>
+                <td>@item.Nit</td>
+                <td>@item.BirthDay</td>
+                <td>@item.City</td>
 
-    }
 
-}
+                @foreach (var carro in item.Cars)
+                {
+                    <td> @carro.Brand </td>
+                    <td> @carro.Model </td>
+                    <td> @carro.Year </td>
+                }
+
+
+                <td>
+                    <a asp-page="./Customers/Index"
+                       class="waves-effect waves-light btn white-text blue darken-1">
+                        <i class="large material-icons">account_box</i>
+                    </a>
+                </td>
+
+                <td>
+                    <a asp-page="./Cars/Index"
+                       class="waves-effect waves-light btn white-text blue darken-1">
+                        <i class="large material-icons">time_to_leave</i>
+                    </a>
+                </td>
+
+                <td>
+                    <a asp-page="./Customers/Index"
+                       class="waves-effect waves-light btn white-text blue darken-1">QUOTE</a>
+                </td>
+
+            </tr>
+        }
+            </tbody>
+        </table>
+</form>
+
