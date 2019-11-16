@@ -8,7 +8,7 @@
 
 <br />
 
-<div>
+<div class="center-align">
     <a asp-page="./Customers/Add" class="waves-effect waves-light btn white-text blue darken-2">New Sale</a>
 </div>
 
@@ -25,9 +25,7 @@
                 <th class="center-align">Number</th>
                 <th class="center-align">Birth Day</th>
                 <th class="center-align">City</th>
-                <th class="center-align">Brand</th>
-                <th class="center-align">Model</th>
-                <th class="center-align">Year</th>
+                <th class="center-align">Car Data</th>
                 <th class="center-align">Qute</th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
@@ -39,38 +37,38 @@
         <tbody>
             @foreach (var item in Model.Customers)
             {
-                <tr>
-                    <td class="blue-text text-darken-4 center-align">@item.Name</td>
-                    <td class="blue-text text-darken-4 center-align">@item.LastName</td>
-                    <td class="blue-text text-darken-4 center-align">@item.DocumentType</td>
-                    <td class="blue-text text-darken-4 center-align">@item.Nit</td>
-                    <td class="blue-text text-darken-4 center-align">@item.BirthDay</td>
-                    <td class="blue-text text-darken-4 center-align">@item.City</td>
+            <tr>
+                <td class="blue-text text-darken-4 center-align">@item.Name</td>
+                <td class="blue-text text-darken-4 center-align">@item.LastName</td>
+                <td class="blue-text text-darken-4 center-align">@item.DocumentType</td>
+                <td class="blue-text text-darken-4 center-align">@item.Nit</td>
+                <td class="blue-text text-darken-4 center-align">@item.BirthDay</td>
+                <td class="blue-text text-darken-4 center-align">@item.City</td>
 
+                <td class="blue-text text-darken-4 center-align">
                     @foreach (var car in item.Cars)
                     {
-                        <td class="blue-text text-darken-4 center-align">@car.Brand</td>
-                        <td class="blue-text text-darken-4 center-align">@car.Model</td>
-                        <td class="blue-text text-darken-4 center-align">@car.Year</td>
+                        <ul>@car.Brand @car.Model @car.Year</ul>
                     }
+                </td>
 
 
-                    <td class="right-align">
-                        <a asp-page="./Customers/Index"
-                           class="waves-effect waves-light btn white-text blue darken-2">Opt_Customer</a>
-                    </td>
+                <td class="right-align">
+                    <a asp-page="./Customers/Index"
+                       class="waves-effect waves-light btn white-text blue darken-2">Opt_Customer</a>
+                </td>
 
-                    <td class="right-align">
-                        <a asp-page="./Cars/Index"
-                           class="waves-effect waves-light btn white-text blue darken-2">Opt_Car</a>
-                    </td>
+                <td class="right-align">
+                    <a asp-page="./Cars/Index"
+                       class="waves-effect waves-light btn white-text blue darken-2">Opt_Car</a>
+                </td>
 
-                    <td class="right-align">
-                        <a asp-page="./Customers/Index"
-                           class="waves-effect waves-light btn white-text blue darken-2">QUOTE</a>
-                    </td>
+                <td class="right-align">
+                    <a asp-page="./Cars/Index"
+                       class="waves-effect waves-light btn white-text blue darken-2">QUOTE</a>
+                </td>
 
-                </tr>
+            </tr>
             }
         </tbody>
     </table>

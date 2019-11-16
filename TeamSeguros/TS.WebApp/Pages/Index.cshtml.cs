@@ -20,11 +20,12 @@ namespace TS.WebApp.Pages
 
         public List<Customer> Customers { get; set; }
 
-        public IndexModel(IConfiguration configuration, CustomerStore customerStore)
+        public IndexModel(IConfiguration configuration, CustomerStore customerStore, CarStore carStore)
         {
             Configuration = configuration;
             CustomerStore = customerStore;
             Customers = CustomerStore.GetCustomers();
+
         }
         public void OnGet()
         {

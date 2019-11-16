@@ -16,6 +16,7 @@
 <br />
 
 <form method="post">
+
     <table class="responsive-table striped">
         <thead>
 
@@ -25,6 +26,7 @@
                 <th class="center-align">Brand</th>
                 <th class="center-align">Model</th>
                 <th class="center-align">Year</th>
+                <th class="center-align">Data Customer</th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
             </tr>
@@ -32,31 +34,39 @@
         <tbody>
             @foreach (var item in Model.Cars)
             {
-                <tr>
-                    <td class="blue-text text-darken-4 center-align">@item.Brand</td>
-                    <td class="blue-text text-darken-4 center-align">@item.Model</td>
-                    <td class="blue-text text-darken-4 center-align">@item.Year</td>
+            <tr>
+                <td class="blue-text text-darken-4 center-align">@item.Brand</td>
+                <td class="blue-text text-darken-4 center-align">@item.Model</td>
+                <td class="blue-text text-darken-4 center-align">@item.Year</td>
 
-                    <td>
+                <!--Falta cargar información del cliente-->
 
-                        <a class="waves-effect waves-light btn white-text blue darken-2"
-                           asp-route-id="@item.Id"
-                           asp-page="Edit">
-                            Edit
-                        </a>
+                <td>
 
-                    </td>
+                    <a class="waves-effect waves-light btn white-text blue darken-2"
+                       asp-route-id="@item.Id"
+                       asp-page="Edit">
+                        Edit
+                    </a>
 
-                    <td>
-                        <button type="submit"
-                                class="waves-effect waves-light btn white-text blue darken-2"
-                                asp-page-handler="delete"
-                                asp-route-id="@item.Id">
-                            Delete
-                        </button>
+                </td>
 
-                    </td>
-                </tr>
+                <td>
+                    <button type="submit"
+                            class="waves-effect waves-light btn white-text blue darken-2"
+                            asp-page-handler="delete"
+                            asp-route-id="@item.Id">
+                        Delete
+                    </button>
+                </td>
+
+                <td>
+                    <a asp-page="../Insurances/Add" class="waves-effect waves-light btn white-text blue darken-2">
+                        Confirm quote
+                    </a>
+
+                </td>
+            </tr>
             }
         </tbody>
     </table>

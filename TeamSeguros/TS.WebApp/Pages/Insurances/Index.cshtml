@@ -4,20 +4,23 @@
 @{
 }
 
-<h2 class="center-align card-panel teal lighten-2">Insurances</h2>
+<h3 class="center-align indigo-text text-darken-2">Insurances</h3>
+
+<br />
 
 <div class="center-align">
-       <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-1">Return to begin</a>
+    <a asp-page="./Add" class="waves-effect waves-light btn white-text blue darken-2">Quote</a>
+    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-2">Return to begin</a>
 </div>
 
 <br />
 
 <form method="post">
-    <table class="responsive-table white-text deep-purple darken-1">
+    <table class="responsive-table striped">
         <thead>
 
 
-            <tr>
+            <tr class="light white-text card-panel indigo darken-2">
                 <th>Price</th>
             </tr>
 
@@ -30,7 +33,7 @@
 
                     <td>
                         <button type="submit"
-                                class="waves-effect waves-light btn white-text blue darken-1"
+                                class="waves-effect waves-light btn white-text blue darken-2"
                                 asp-page-handler="delete"
                                 asp-route-id="@item.Id">
                             Delete

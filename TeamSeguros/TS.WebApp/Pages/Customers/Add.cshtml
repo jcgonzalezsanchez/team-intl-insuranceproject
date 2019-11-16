@@ -29,9 +29,9 @@
                 <div class="input-field col s12 m6 l6">
                     <select asp-for="Customer.DocumentType">
                         <option value="" disabled selected>Select document</option>
-                        <option value="Cédua">Cédula</option>
-                        <option value="Tarjeta de identidad">Tarjeta de identidad</option>
-                        <option value="Cédula de extrajeria">Cédula de extrajeria</option>
+                        <option value="Cedua">Cédula de ciudadanía</option>
+                        <option value="CedulaExtranjeria">Cédula de extranjería</option>
+                        <option value="TarjetaIdentidad">Tarjeta de identidad</option>
                     </select>
                 </div>
 
@@ -50,8 +50,16 @@
                     <label for="birthdate">Birth date</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input id="nit" type="text" class="validate blue-text text-darken-4" asp-for="Customer.City">
-                    <label for="nit">City of residence</label>
+                    <select asp-for="Customer.DocumentType">
+                        <option value="" disabled selected>Select city of residence</option>
+                        <option value="Bogota">Bogotá</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Cartagena">Cartagena</option>
+                        <option value="Medellin">Medellín</option>
+                        <option value="SantaMarta">Santa Marta</option>
+                        <option value="OtraCiudad">Otra ciudad</option>
+                    </select>
                 </div>
             </div>
         </div>
