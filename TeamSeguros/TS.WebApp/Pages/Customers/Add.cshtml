@@ -4,18 +4,20 @@
     ViewData["Title"] = "Add";
 }
 
-<h3 class="center-align card-panel blue lighten-5">New Customer</h3>
+<h3 class="center-align indigo-text text-darken-2">New Customer</h3>
+
+<br />
 
 <div class="row">
     <form method="post" class="col s12">
         <div>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input id="name" type="text" class="validate" asp-for="Customer.Name">
+                    <input id="name" type="text" class="validate blue-text text-darken-4" asp-for="Customer.Name">
                     <label for="name">Name</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input id="last_name" type="text" class="validate" asp-for="Customer.LastName">
+                    <input id="last_name" type="text" class="validate blue-text text-darken-4" asp-for="Customer.LastName">
                     <label for="last_name">Last Name</label>
                 </div>
             </div>
@@ -34,8 +36,8 @@
                 </div>
 
                 <div class="input-field col s12 m6 l6">
-                    <input id="nit" type="text" class="validate" asp-for="Customer.Nit">
-                    <label for="nit">Nit</label>
+                    <input id="nit" type="number" class="validate blue-text text-darken-4" asp-for="Customer.Nit">
+                    <label for="nit">Number</label>
                 </div>
             </div>
         </div>
@@ -44,21 +46,21 @@
             <!--Esta pendiente cuadrar el calendario-->
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input id="birthdate" asp-for="Customer.BirthDay" type="text" class="datepicker">
-                    <label for="birthdate">Birthdate</label>
+                    <input id="birthdate" asp-for="Customer.BirthDay" type="text" class="datepicker blue-text text-darken-4">
+                    <label for="birthdate">Birth date</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input id="nit" type="text" class="validate" asp-for="Customer.City">
+                    <input id="nit" type="text" class="validate blue-text text-darken-4" asp-for="Customer.City">
                     <label for="nit">City of residence</label>
                 </div>
             </div>
         </div>
 
         <div class="center-align">
-            <button type="submit" class="waves-effect waves-light btn white-text blue darken-1">
+            <button type="submit" class="waves-effect waves-light btn white-text blue darken-2">
                 Save
             </button>
-            <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-1">Cancel</a>
+            <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-2">Cancel</a>
         </div>
 
     </form>

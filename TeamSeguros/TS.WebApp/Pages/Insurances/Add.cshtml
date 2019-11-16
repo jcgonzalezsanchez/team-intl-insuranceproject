@@ -1,8 +1,33 @@
 ﻿@page
+@addTagHelper`*, Microsoft.AspNetCore.Mvc.TagHelpers
 @model TS.WebApp.Pages.Insurances.AddModel
 @{
     ViewData["Title"] = "Add";
 }
 
-<h1>Add</h1>
 
+<div class="center-align">
+    <h3 class="card-panel teal lighten-2">New Insurance</h3>
+</div>
+
+<div class="row center-align">
+    <form method="post" class="col s12">
+        <input hidden asp-for="CustomerId" />
+        <div>
+            <div class="row">
+                <div class="input-field col s12 m3 l4">
+                    <input id="brand" type="text" class="validate" asp-for="Insurance.Price">
+                    <label for="brand">Brand</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-align">
+            <button type="submit" class="waves-effect waves-light btn white-text blue darken-1">
+                Save
+            </button>
+            <a asp-page="../Customers/Index" class="waves-effect waves-light btn white-text blue darken-1">Return</a>
+        </div>
+
+    </form>
+</div>

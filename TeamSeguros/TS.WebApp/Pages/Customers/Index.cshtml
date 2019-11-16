@@ -4,66 +4,71 @@
 @{
 }
 
-<h2 class="center-align card-panel teal lighten-2">CUSTOMERS</h2>
+<h3 class="center-align indigo-text text-darken-2">Customers</h3>
+
+<br />
 
 <div class="center-align">
-    <a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-1">Create new Customer</a>
+    <a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-2">Create new Customer</a>
 
-    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-1">Return to begin</a>
+    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-2">Return to begin</a>
 </div>
 <br />
 <form method="post">
-    <table class="responsive-table white-text deep-purple darken-1">
+    <table class="responsive-table striped">
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>LastName</th>
-                <th>DocumentType</th>
-                <th>Nit</th>
-                <th>BirthDay</th>
-                <th>City</th>
+            <tr class="light white-text card-panel indigo darken-2">
+                <th class="center-align">Name</th>
+                <th class="center-align">LastName</th>
+                <th class="center-align">DocumentType</th>
+                <th class="center-align">Nit</th>
+                <th class="center-align">BirthDay</th>
+                <th class="center-align">City</th>
+                <th class="center-align"></th>
+                <th class="center-align"></th>
+                <th class="center-align"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Customers)
             {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.LastName</td>
-                <td>@item.DocumentType</td>
-                <td>@item.Nit</td>
-                <td>@item.BirthDay</td>
-                <td>@item.City</td>
+                <tr>
+                    <td>@item.Name</td>
+                    <td class="blue-text text-darken-4 center-align">@item.LastName</td>
+                    <td class="blue-text text-darken-4 center-align">@item.DocumentType</td>
+                    <td class="blue-text text-darken-4 center-align">@item.Nit</td>
+                    <td class="blue-text text-darken-4 center-align">@item.BirthDay</td>
+                    <td class="blue-text text-darken-4 center-align">@item.City</td>
 
-                <!--Queda faltando la parte donde se carga la información del
-    carro cuando ya este costruida esa etapa-->
+                    <!--Queda faltando la parte donde se carga la información del
+                    carro cuando ya este costruida esa etapa-->
 
-                <td>
-                    <a class="waves-effect waves-light btn white-text blue darken-1"
-                       asp-route-id="@item.Id"
-                       asp-page="Edit">
-                        Edit
-                    </a>
+                    <td>
+                        <a class="waves-effect waves-light btn white-text blue darken-2"
+                           asp-route-id="@item.Id"
+                           asp-page="Edit">
+                            Edit
+                        </a>
 
-                </td>
-                <td>
-                    <button type="submit"
-                            class="waves-effect waves-light btn white-text blue darken-1"
-                            asp-page-handler="delete"
-                            asp-route-id="@item.Id">
-                        Delete
-                    </button>
-                </td>
-                <td>
-                    <a class="waves-effect waves-light btn white-text blue darken-1"
-                       asp-route-customerid="@item.Id"
-                       asp-page="../Cars/Add">
-                        CREATE CAR
-                    </a>
-                </td>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                class="waves-effect waves-light btn white-text blue darken-2"
+                                asp-page-handler="delete"
+                                asp-route-id="@item.Id">
+                            Delete
+                        </button>
+                    </td>
+                    <td>
+                        <a class="waves-effect waves-light btn white-text blue darken-2"
+                           asp-route-customerid="@item.Id"
+                           asp-page="../Cars/Add">
+                            CREATE CAR
+                        </a>
+                    </td>
 
-                
-            </tr>
+
+                </tr>
             }
         </tbody>
     </table>

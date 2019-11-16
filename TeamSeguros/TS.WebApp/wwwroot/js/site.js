@@ -4,14 +4,15 @@
 // Write your Javascript code.
 
 
+
 // Or with jQuery
 
 $(document).ready(function () {
+    $('.sidenav').sidenav();
     $('.datepicker').datepicker({
-        format: "dd/mm/yyyy",
-        changeMonth: true,
-        changeYear: true,
-        yearRange: '1940:2000'
+        dateFormat: 'dd/mm/yy',
+        yearRange: [1900, 3000],
     });
     $('select').formSelect();
 });
+

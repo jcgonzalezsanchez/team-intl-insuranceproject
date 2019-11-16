@@ -38,9 +38,6 @@ namespace TS.WebApp.Pages.Insurances
             InsuranceStore.AddInsurance(Insurance);
             return RedirectToPage("./Index");
         }
-        public void OnGet()
-        {
 
-        }
     }
 }

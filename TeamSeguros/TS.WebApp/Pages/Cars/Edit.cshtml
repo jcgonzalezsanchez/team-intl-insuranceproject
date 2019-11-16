@@ -3,7 +3,10 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<
+
+    <h3 class="center-align indigo-text text-darken-2">Edit Car</h3>
+
+    <br />
 
     <div class="row">
         <form method="post" class="col s12">
@@ -11,26 +14,26 @@
             <input hidden asp-for="Car.CustomerId" />
             <div>
                 <div class="row">
-                    <div class="input-field col s12 m6 l6">
-                        <input id="name" type="text" class="validate" asp-for="Car.Brand">
+                    <div class="input-field col s12 m6 l4">
+                        <input id="name" type="text" class="validate blue-text text-darken-4 center-align" asp-for="Car.Brand">
                         <label for="name">Brand</label>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <input id="last_name" type="text" class="validate" asp-for="Car.Model">
+                    <div class="input-field col s12 m6 l4">
+                        <input id="last_name" type="text" class="validate blue-text text-darken-4 center-align" asp-for="Car.Model">
                         <label for="last_name">Model</label>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <input id="year" asp-for="Car.Year" type="number" class="validate">
+                    <div class="input-field col s12 m6 l4">
+                        <input id="year" asp-for="Car.Year" type="number" class="validate blue-text text-darken-4 center-align">
                         <label for="year">Year</label>
                     </div>
                 </div>
             </div>
 
             <div class="center-align">
-                <button type="submit" class="waves-effect waves-light btn white-text blue darken-1">
+                <button type="submit" class="waves-effect waves-light btn white-text blue darken-2">
                     Save
                 </button>
-                <a asp-page="./Index" class="waves-effect waves-light btn white-text blue darken-1">Return</a>
+                <a asp-page="./Index" class="waves-effect waves-light btn white-text blue darken-2">Return</a>
             </div>
 
         </form>
