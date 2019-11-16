@@ -7,6 +7,11 @@
 // Or with jQuery
 
 $(document).ready(function () {
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+        format: "dd/mm/yyyy",
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1940:2000'
+    });
     $('select').formSelect();
 });

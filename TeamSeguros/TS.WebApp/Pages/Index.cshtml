@@ -4,20 +4,20 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="center-align">
-    <h1>Sales</h1>
+<div class="center-align light-blue-text text-darken-3">
+    <h3>Sales</h3>
 </div>
 
 <div>
-    <a asp-page="./Customers/Add" class="waves-effect waves-light btn white-text blue darken-1">New Sale</a>
+    <a asp-page="./Customers/Add" class="waves-effect waves-light btn white-text light-blue darken-3">New Sale</a>
 </div>
 
 <br />
 
 <form method="post">
-    <table class="responsive-table white-text deep-purple darken-1 striped">
+    <table class="responsive-table striped">
         <thead>
-            <tr>
+            <tr class="card-panel white-text red lighten-1">
                 <th>Name</th>
                 <th>LastName</th>
                 <th>Document Type</th>

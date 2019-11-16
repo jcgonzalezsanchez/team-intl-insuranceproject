@@ -12,6 +12,7 @@ namespace TS.WebApp.Models
             Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
+        public Guid CustomerId { get; set; }
         public int Price { get; set; }
 
     }

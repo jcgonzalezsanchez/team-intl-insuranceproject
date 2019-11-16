@@ -26,6 +26,10 @@ namespace TS.WebApp.Data
             return Context.Insurance.ToList();
         }
 
-        
+        internal void AddInsurance(Insurance insurance)
+        {
+            Context.Insurance.Add(insurance);
+            Context.SaveChanges();
+        }
     }
 }
