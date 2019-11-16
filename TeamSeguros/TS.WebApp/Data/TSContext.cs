@@ -11,6 +11,7 @@ namespace TS.WebApp.Data
     {
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Car> Car { get; set; }
+        public DbSet<Insurance> Insurance { get; set; }
         public TSContext(DbContextOptions<TSContext> options)
             :base (options)
         {

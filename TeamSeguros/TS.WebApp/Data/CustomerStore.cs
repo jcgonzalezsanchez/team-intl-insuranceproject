@@ -27,6 +27,7 @@ namespace TS.WebApp.Data
             Context.Customer.Update(currentCustomer);
             Context.SaveChanges();
         }
+
         internal Customer GetCustomerById(Guid id)
         {
             return Context.Customer.FirstOrDefault(x => x.Id == id);

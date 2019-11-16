@@ -38,6 +38,7 @@ namespace TS.WebApp
 
             services.AddScoped<CustomerStore>();
             services.AddScoped<CarStore>();
+            services.AddScoped<InsuranceStore>();
 
             services.AddDbContext<TSContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("TeamSeguros"),

@@ -1,0 +1,44 @@
+﻿@page
+@model TS.WebApp.Pages.Insurances.IndexModel
+@{
+}
+
+<h2 class="center-align card-panel teal lighten-2">Cars</h2>
+
+<div class="center-align">
+    <a asp-page="../Customers/Index" class="waves-effect waves-light btn white-text blue darken-1">RETURN TO CUSTOMERS TO CREATE A NEW CAR</a>
+
+    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-1">Return to begin</a>
+</div>
+<br />
+
+<form method="post">
+    <table class="responsive-table white-text deep-purple darken-1">
+        <thead>
+
+
+            <tr>
+                <th>Price</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Insurances)
+            {
+                <tr>
+                    <td>@item.Price</td>
+
+                    <td>
+                        <button type="submit"
+                                class="waves-effect waves-light btn white-text blue darken-1"
+                                asp-page-handler="delete"
+                                asp-route-id="@item.Id">
+                            Delete
+                        </button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
