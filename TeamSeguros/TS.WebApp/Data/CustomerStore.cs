@@ -45,7 +45,9 @@ namespace TS.WebApp.Data
         }
         internal List<Customer> GetCustomers()
         {
-            return Context.Customer.Include(x => x.Cars).ToList();
+            return Context.Customer.Include(x => x.Cars)
+                .Include(x => x.Insurances)
+                .ToList();
         }
     }
 }

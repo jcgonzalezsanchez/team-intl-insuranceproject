@@ -13,6 +13,7 @@ namespace TS.WebApp.Models
         }
         public Guid Id { get; set; }
         public Guid CustomerId { get; set; }
+        public Guid CarId { get; set; }
         public int Price { get; set; }
 
     }

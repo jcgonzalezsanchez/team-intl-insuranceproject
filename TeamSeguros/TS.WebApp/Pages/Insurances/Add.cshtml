@@ -12,12 +12,12 @@
 
 <div class="row center-align">
     <form method="post" class="col s12">
-        <input hidden asp-for="CustomerId" />
+        <input asp-for="@Model.Car.CustomerId" />
         <div>
             <div class="row">
                 <div class="input-field col s12 m3 l4">
-                    <input id="brand" type="number" class="validate" asp-for="Insurance.Price">
-                    <label for="brand">Brand</label>
+                    <input asp-for="@Model.TotalAPagar" />
+                    <label for="brand">Price</label>
                 </div>
             </div>
         </div>
@@ -30,4 +30,5 @@
         </div>
 
     </form>
+    
 </div>

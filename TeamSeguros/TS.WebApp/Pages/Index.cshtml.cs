@@ -18,6 +18,7 @@ namespace TS.WebApp.Pages
 
         public CarStore CarStore { get; set; }
 
+
         public List<Customer> Customers { get; set; }
 
         public IndexModel(IConfiguration configuration, CustomerStore customerStore, CarStore carStore)

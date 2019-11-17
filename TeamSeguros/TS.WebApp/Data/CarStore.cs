@@ -44,8 +44,8 @@ namespace TS.WebApp.Data
         internal List<Car> GetCars()
         {
             return Context.Car.ToList();
+            
         }
 
-        
     }
 }

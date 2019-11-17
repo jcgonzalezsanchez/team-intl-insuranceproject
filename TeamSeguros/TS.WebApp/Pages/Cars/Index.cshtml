@@ -61,7 +61,9 @@
                 </td>
 
                 <td>
-                    <a asp-page="../Insurances/Add" class="waves-effect waves-light btn white-text blue darken-2">
+                    <a asp-route-carid="@item.Id"
+                       asp-page="../Insurances/Add"
+                       class="waves-effect waves-light btn white-text blue darken-2">
                         Confirm quote
                     </a>
 

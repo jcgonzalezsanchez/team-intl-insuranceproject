@@ -26,7 +26,7 @@
                 <th class="center-align">Birth Day</th>
                 <th class="center-align">City</th>
                 <th class="center-align">Car Data</th>
-                <th class="center-align">Qute</th>
+                <th class="center-align">Quote</th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
@@ -49,6 +49,13 @@
                     @foreach (var car in item.Cars)
                     {
                         <ul>@car.Brand @car.Model @car.Year</ul>
+                    }
+                </td>
+
+                <td class="blue-text text-darken-4 center-align">
+                    @foreach (var insurance in item.Insurances)
+                    {
+                        <ul>@insurance.Price</ul>
                     }
                 </td>
 
