@@ -8,9 +8,16 @@
 
 <br />
 
-<div class="center-align">
-    <a asp-page="./Add" class="waves-effect waves-light btn white-text blue darken-2">Quote</a>
-    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-2">Return to begin</a>
+<div>
+    <a asp-page="../Cars/Index"
+       class="btn-floating btn waves-effect waves-light white-text blue darken-2 left-align">
+        <i class="material-icons">arrow_back</i>
+    </a>
+
+    <a asp-page="../Index"
+       class="btn-floating btn waves-effect waves-light white-text blue darken-2 left-align">
+        <i class="material-icons">done</i>
+    </a>
 </div>
 
 <br />
@@ -22,6 +29,7 @@
 
             <tr class="light white-text card-panel indigo darken-2">
                 <th>Price</th>
+                <th></th>
             </tr>
 
         </thead>
@@ -33,12 +41,12 @@
 
                     <td>
                         <button type="submit"
-                                class="waves-effect waves-light btn white-text blue darken-2"
                                 asp-page-handler="delete"
-                                asp-route-id="@item.Id">
-                            Delete
+                                asp-route-id="@item.Id"
+                                class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                            <i class="material-icons">delete_forever</i>
+                            >
                         </button>
-
                     </td>
                 </tr>
             }

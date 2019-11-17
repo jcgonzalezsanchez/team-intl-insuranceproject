@@ -7,15 +7,15 @@
 
 
 <div class="center-align">
-    <h3 class="card-panel teal lighten-2">New Insurance</h3>
+    <h3 class="center-align indigo-text text-darken-2">New Insurance</h3>
 </div>
 
 <div class="row center-align">
     <form method="post" class="col s12">
-        <input asp-for="@Model.Car.CustomerId" />
+        <input hidden asp-for="@Model.Car.CustomerId" />
         <div>
             <div class="row">
-                <div class="input-field col s12 m3 l4">
+                <div class="input-field col s12 m8 l12">
                     <input asp-for="@Model.TotalAPagar" />
                     <label for="brand">Price</label>
                 </div>
@@ -23,12 +23,16 @@
         </div>
 
         <div class="center-align">
-            <button type="submit" class="waves-effect waves-light btn white-text blue darken-2">
-                Save
+            <button type="submit"
+                    class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                <i class="material-icons">save</i>
             </button>
-            <a asp-page="../Customers/Index" class="waves-effect waves-light btn white-text blue darken-2">Return</a>
+            <a asp-page="../Cars/Index"
+               class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                <i class="material-icons">cancel</i>
+                >
+            </a>
         </div>
-
     </form>
-    
+
 </div>
