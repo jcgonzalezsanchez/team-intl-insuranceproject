@@ -20,40 +20,38 @@
     </a>
 </div>
 
-
 <br />
-
 
 <form method="post">
     <table class="responsive-table striped">
         <thead>
-            <tr class="light white-text card-panel indigo darken-2">
+            <tr class="light white-text card-panel indigo darken-2 card-content">
                 <th class="center-align">Name</th>
                 <th class="center-align">LastName</th>
                 <th class="center-align">DocumentType</th>
                 <th class="center-align">Nit</th>
                 <th class="center-align">BirthDay</th>
                 <th class="center-align">City</th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
+                <th class="center-align">Edit</th>
+                <th class="center-align">Delete</th>
+                <th class="center-align">Create Car</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Customers)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.LastName</td>
-                    <td>@item.DocumentType</td>
-                    <td>@item.Nit</td>
-                    <td>@item.BirthDay.ToString("dd/MM/yyyy")</td>
-                    <td>@item.City</td>
+                    <td class="center-align">@item.Name</td>
+                    <td class="center-align">@item.LastName</td>
+                    <td class="center-align">@item.DocumentType</td>
+                    <td class="center-align">@item.Nit</td>
+                    <td class="center-align">@item.BirthDay.ToString("dd/MM/yyyy")</td>
+                    <td class="center-align">@item.City</td>
 
                     <td>
                         <a asp-route-id="@item.Id"
                            asp-page="Edit"
-                           class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                           class="btn-floating btn waves-effect waves-light white-text blue darken-2">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>
@@ -62,7 +60,7 @@
                         <button type="submit"
                                 asp-page-handler="delete"
                                 asp-route-id="@item.Id"
-                                class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                                class="btn-floating btn waves-effect waves-light white-text blue darken-2">
                             <i class="material-icons">delete_forever</i>
                             >
                         </button>

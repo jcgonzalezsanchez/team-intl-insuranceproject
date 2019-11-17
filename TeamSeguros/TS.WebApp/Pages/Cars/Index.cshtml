@@ -13,9 +13,8 @@
        class="btn-floating btn waves-effect waves-light white-text blue darken-2 left-align">
         <i class="material-icons">arrow_back</i>
     </a>
-
     <a asp-page="../Customers/Index"
-       class="btn-floating pulse waves-effect waves-light white-text blue darken-2 right-align">
+       class="btn-floating waves-effect waves-light white-text blue darken-2 right-align">
         <i class="material-icons">add</i>
     </a>
 </div>
@@ -23,19 +22,17 @@
 <br />
 
 <form method="post">
-
     <table class="responsive-table striped">
         <thead>
-
-
-            <tr class="light white-text card-panel indigo darken-2">
-
+            <tr class="light white-text card-panel indigo darken-2 card-content">
                 <th class="center-align">Brand</th>
                 <th class="center-align">Model</th>
                 <th class="center-align">Year</th>
-                <th class="center-align">Data Customer</th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
+                <th class="center-align">Name</th>
+                <th class="center-align">Last Name</th>
+                <th class="center-align">Edit</th>
+                <th class="center-align">Delete</th>
+                <th class="center-align">Quote</th>
             </tr>
         </thead>
         <tbody>
@@ -66,14 +63,15 @@
                     </button>
                 </td>
 
-                <td>
-                    <a asp-route-carid="@item.Id"
-                       asp-page="../Insurances/Add"
-                       class="waves-effect pulse waves-light btn white-text blue darken-2">
-                        Confirm quote
-                    </a>
 
-                </td>
+                    <td>
+                        <a asp-route-carid="@item.Id"
+                           asp-page="../Insurances/Add"
+                           class="waves-effect pulse waves-light btn white-text blue darken-2">
+                            Confirm quote
+                        </a>
+                    </td>
+
             </tr>
             }
         </tbody>

@@ -4,11 +4,13 @@
     ViewData["Title"] = "Home page";
 }
 
-<h3 class="center-align indigo-text text-darken-2">Sales</h3>
+<br />
+
+<h3 class="card-panel deep-purple darken-2 white-text center-align">Sales</h3>
 
 <br />
 
-<div class="container">
+<div class="left-align">
     <a asp-page="./Customers/Add"
        class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
         <i class="material-icons">add</i>
@@ -20,70 +22,92 @@
 <form method="post">
     <table class="responsive-table striped container">
         <thead>
-
-            <tr class="light white-text indigo darken-2">
+            
+            <tr class="light white-text indigo darken-2 card-content">
                 <th class="center-align">Name</th>
                 <th class="center-align">Last Name</th>
                 <th class="center-align">Document</th>
                 <th class="center-align">Number</th>
                 <th class="center-align">Birth Day</th>
                 <th class="center-align">City</th>
-                <th class="center-align">Car Data</th>
+                <th class="center-align">Brand</th>
+                <th class="center-align">Model</th>
+                <th class="center-align">Year</th>
+                <th class="center-align">Quotation</th>
+                <th class="center-align">Customer options</th>
+                <th class="center-align">Car options</th>
                 <th class="center-align">Quote</th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
-
             </tr>
 
         </thead>
+
         <tbody>
             @foreach (var item in Model.Customers)
             {
-            <tr>
-                <td class="blue-text text-darken-4 center-align">@item.Name</td>
-                <td class="blue-text text-darken-4 center-align">@item.LastName</td>
-                <td class="blue-text text-darken-4 center-align">@item.DocumentType</td>
-                <td class="blue-text text-darken-4 center-align">@item.Nit</td>
-                <td class="blue-text text-darken-4 center-align">@item.BirthDay.ToString("dd/MM/yyyy")</td>
-                <td class="blue-text text-darken-4 center-align">@item.City</td>
+            <tr class="center-align">
+                <td class="center-align">@item.Name</td>
+                <td class="center-align">@item.LastName</td>
+                <td class="center-align">@item.DocumentType</td>
+                <td class="center-align">@item.Nit</td>
+                <td class="center-align">@item.BirthDay.ToString("dd/MM/yyyy")</td>
+                <td class="center-align">@item.City</td>
 
+                <td class="center-align">
+                    @foreach (var car in item.Cars)
+                    {
+                        <ul>@car.Brand</ul>
+                    }
+                </td>
 
-                    <td class="blue-text text-darken-4 center-align">
-                        @foreach (var car in item.Cars)
-                        {
-                            <ul>@car.Brand @car.Model</ul>
-                        }
-                    </td>
+                <td class="center-align">
+                    @foreach (var car in item.Cars)
+                    {
+                        <ul>@car.Model</ul>
+                    }
+                </td>
 
+                <td class="center-align">
+                    @foreach (var car in item.Cars)
+                    {
+                        <ul>@car.Year</ul>
+                    }
+                </td>
 
-                    <td class="blue-text text-darken-4 center-align">
-                        @foreach (var insurance in item.Insurances)
-                        {
-                            <ul>@insurance.Price</ul>
-                        }
-                    </td>
+                <td class="center-align">
+                    @foreach (var insurance in item.Insurances)
+                    {
+                        <ul>@insurance.Price</ul>
+                    }
+                </td>
 
+                <td class="right-align">
+                    <a asp-page="./Customers/Index"
+                       class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                        <i class="material-icons">account_circle</i>
+                    </a>
+                </td>
 
-                    <td>
-                        <a asp-page="./Customers/Index"
-                           class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
-                            <i class="material-icons">account_circle</i></a>
-                    </td>
-
-                    <td>
+                @if (item.Cars.Count >= 1)
+                {
+                    <td class="right-align">
                         <a asp-page="./Cars/Index"
                            class="btn-floating btn waves-effect waves-light white-text blue darken-2">
                             <i class="material-icons">drive_eta</i>
                         </a>
                     </td>
+                }
 
-                    <td>
+
+                @if (item.Cars.Count >= 1)
+                {
+                    <td class="right-align">
                         <a asp-page="./Cars/Index"
                            class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
                             <i class="material-icons">payment</i>
                         </a>
                     </td>
+                }
+
 
             </tr>
             }

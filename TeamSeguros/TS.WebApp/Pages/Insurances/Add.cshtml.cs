@@ -39,10 +39,10 @@ namespace TS.WebApp.Pages.Insurances
             Customer = CustomerStore.GetCustomerById(Car.CustomerId);
 
             double PrecioBase = 1000000;
-            double Incrementociudad = 0;
-            double IncrementoModelo = 0;
-            double IncrementoEdad1 = 0;
-            double IncrementoEdad2 = 0;
+            double Incrementociudad = 0; //Aplica un incremento del 10% si es medellín
+            double IncrementoModelo = 0; //aplica un incremento del 5% si el modelo del carro es mayor de 10 años
+            double IncrementoEdad1 = 0; //Aplica un incremeto del 30% si la edad esta entre los 16 y 25 años
+            double IncrementoEdad2 = 0; //Aplica un incremeto del 30% si la edad esta entre los 25 y 40 años
 
             if (Customer.City == "Medellin")
             {

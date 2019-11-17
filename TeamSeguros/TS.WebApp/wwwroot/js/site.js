@@ -10,8 +10,8 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
     $('.datepicker').datepicker({
-        dateFormat: 'dd/mm/yy',
-        yearRange: [1900, 3000],
+        yearRange: [1950, 2020],
+        format: 'dd/mm/yyyy'
     });
     $('select').formSelect();
 });
