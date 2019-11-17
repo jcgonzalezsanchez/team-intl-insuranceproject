@@ -8,12 +8,22 @@
 
 <br />
 
-<div class="center-align">
-    <a asp-page="Add" class="waves-effect waves-light btn white-text blue darken-2">Create new Customer</a>
+<div>
+    <a asp-page="../Index"
+       class="btn-floating btn waves-effect waves-light white-text blue darken-2 left-align">
+        <i class="material-icons">arrow_back</i>
+    </a>
 
-    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-2">Return to begin</a>
+    <a asp-page="Add"
+       class="btn-floating pulse waves-effect waves-light white-text blue darken-2 right-align">
+        <i class="material-icons">add</i>
+    </a>
 </div>
+
+
 <br />
+
+
 <form method="post">
     <table class="responsive-table striped">
         <thead>
@@ -34,33 +44,35 @@
             {
                 <tr>
                     <td>@item.Name</td>
-                    <td class="blue-text text-darken-4 center-align">@item.LastName</td>
-                    <td class="blue-text text-darken-4 center-align">@item.DocumentType</td>
-                    <td class="blue-text text-darken-4 center-align">@item.Nit</td>
-                    <td class="blue-text text-darken-4 center-align">@item.BirthDay.ToString("dd/MM/yyyy")</td>
-                    <td class="blue-text text-darken-4 center-align">@item.City</td>
+                    <td>@item.LastName</td>
+                    <td>@item.DocumentType</td>
+                    <td>@item.Nit</td>
+                    <td>@item.BirthDay.ToString("dd/MM/yyyy")</td>
+                    <td>@item.City</td>
 
                     <td>
-                        <a class="waves-effect waves-light btn white-text blue darken-2"
-                           asp-route-id="@item.Id"
-                           asp-page="Edit">
-                            Edit
+                        <a asp-route-id="@item.Id"
+                           asp-page="Edit"
+                           class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                            <i class="material-icons">edit</i>
                         </a>
-
                     </td>
+
                     <td>
                         <button type="submit"
-                                class="waves-effect waves-light btn white-text blue darken-2"
                                 asp-page-handler="delete"
-                                asp-route-id="@item.Id">
-                            Delete
+                                asp-route-id="@item.Id"
+                                class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                            <i class="material-icons">delete_forever</i>
+                            >
                         </button>
                     </td>
+
                     <td>
-                        <a class="waves-effect waves-light btn white-text blue darken-2"
-                           asp-route-customerid="@item.Id"
-                           asp-page="../Cars/Add">
-                            CREATE CAR
+                        <a asp-route-customerid="@item.Id"
+                           asp-page="../Cars/Add"
+                           class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
+                            <i class="material-icons">drive_eta</i>
                         </a>
                     </td>
 

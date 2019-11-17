@@ -11,7 +11,7 @@
 <div class="center-align">
     <a asp-page="../Customers/Index" class="waves-effect waves-light btn white-text blue darken-2">RETURN TO CUSTOMERS TO CREATE A NEW CAR</a>
 
-    <a asp-page="../Index" class="waves-effect waves-light btn white-text blue darken-2">Return to begin</a>
+    <a asp-page="../Index" class="waves-effect pulse waves-light btn white-text blue darken-2">Return to begin</a>
 </div>
 <br />
 
@@ -35,9 +35,9 @@
             @foreach (var item in Model.Cars)
             {
             <tr>
-                <td class="blue-text text-darken-4 center-align">@item.Brand</td>
-                <td class="blue-text text-darken-4 center-align">@item.Model</td>
-                <td class="blue-text text-darken-4 center-align">@item.Year</td>
+                <td>@item.Brand</td>
+                <td>@item.Model</td>
+                <td>@item.Year</td>
 
                 <!--Falta cargar información del cliente-->
 

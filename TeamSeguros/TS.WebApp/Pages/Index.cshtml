@@ -8,8 +8,8 @@
 
 <br />
 
-<div class="center-align">
-    <a asp-page="./Customers/Add" class="waves-effect waves-light btn white-text blue darken-2">New Sale</a>
+<div class="container">
+    <a asp-page="./Customers/Add" class="waves-effect pulse btn white-text blue darken-2">New Sale</a>
 </div>
 
 <br />
@@ -42,38 +42,45 @@
                 <td class="blue-text text-darken-4 center-align">@item.LastName</td>
                 <td class="blue-text text-darken-4 center-align">@item.DocumentType</td>
                 <td class="blue-text text-darken-4 center-align">@item.Nit</td>
-                <td class="blue-text text-darken-4 center-align">@item.BirthDay</td>
+                <td class="blue-text text-darken-4 center-align">@item.BirthDay.ToString("dd/MM/yyyy")</td>
                 <td class="blue-text text-darken-4 center-align">@item.City</td>
 
-                <td class="blue-text text-darken-4 center-align">
-                    @foreach (var car in item.Cars)
-                    {
-                        <ul>@car.Brand @car.Model @car.Year</ul>
-                    }
-                </td>
 
-                <td class="blue-text text-darken-4 center-align">
-                    @foreach (var insurance in item.Insurances)
-                    {
-                        <ul>@insurance.Price</ul>
-                    }
-                </td>
+                    <td class="blue-text text-darken-4 center-align">
+                        @foreach (var car in item.Cars)
+                        {
+                            <ul>@car.Brand @car.Model</ul>
+                        }
+                    </td>
 
 
-                <td class="right-align">
-                    <a asp-page="./Customers/Index"
-                       class="waves-effect waves-light btn white-text blue darken-2">Opt_Customer</a>
-                </td>
+                    <td class="blue-text text-darken-4 center-align">
+                        @foreach (var insurance in item.Insurances)
+                        {
+                            <ul>@insurance.Price</ul>
+                        }
+                    </td>
 
-                <td class="right-align">
-                    <a asp-page="./Cars/Index"
-                       class="waves-effect waves-light btn white-text blue darken-2">Opt_Car</a>
-                </td>
 
-                <td class="right-align">
-                    <a asp-page="./Cars/Index"
-                       class="waves-effect waves-light btn white-text blue darken-2">QUOTE</a>
-                </td>
+                    <td>
+                        <a asp-page="./Customers/Index"
+                           class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                            <i class="material-icons">account_circle</i></a>
+                    </td>
+
+                    <td>
+                        <a asp-page="./Cars/Index"
+                           class="btn-floating btn waves-effect waves-light white-text blue darken-2">
+                            <i class="material-icons">drive_eta</i>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a asp-page="./Cars/Index"
+                           class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
+                            <i class="material-icons">payment</i>
+                        </a>
+                    </td>
 
             </tr>
             }
