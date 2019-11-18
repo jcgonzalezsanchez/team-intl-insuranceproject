@@ -22,13 +22,16 @@ namespace TS.WebApp.Pages.Insurances
 
         }
 
+        [BindProperty]
+        public Guid CarId { get; set; }
+        [BindProperty]
+        public Guid CustomerId { get; set; }
+
         public Customer Customer { get; set; }
 
-        [BindProperty]
         public Car Car { get; set; }
 
-        [BindProperty]
-        public Insurance Insurance { get; set; }
+        public Insurance Insurance { get; set; } = new Insurance();
 
         [BindProperty]
         public Double TotalAPagar { get; set; }
@@ -37,6 +40,8 @@ namespace TS.WebApp.Pages.Insurances
         {
             Car = CarStore.GetCarById(carid);
             Customer = CustomerStore.GetCustomerById(Car.CustomerId);
+            CarId = carid;
+            CustomerId = Car.CustomerId;
 
             double PrecioBase = 1000000;
             double Incrementociudad = 0; //Aplica un incremento del 10% si es medellín
@@ -75,8 +80,8 @@ namespace TS.WebApp.Pages.Insurances
                 return Page();
             }
             //Add
-            Insurance.CarId = Car.Id;
-            Insurance.CustomerId = Car.CustomerId;
+            Insurance.CarId = CarId;
+            Insurance.CustomerId = CustomerId;
             Insurance.Price = Convert.ToInt32(TotalAPagar);
             InsuranceStore.AddInsurance(Insurance);
             return RedirectToPage("./Index");

@@ -55,28 +55,28 @@
                 <td class="center-align">
                     @foreach (var car in item.Cars)
                     {
-                        <ul>@car.Brand</ul>
+                    <ul>@car.Brand</ul>
                     }
                 </td>
 
                 <td class="center-align">
                     @foreach (var car in item.Cars)
                     {
-                        <ul>@car.Model</ul>
+                    <ul>@car.Model</ul>
                     }
                 </td>
 
                 <td class="center-align">
                     @foreach (var car in item.Cars)
                     {
-                        <ul>@car.Year</ul>
+                    <ul>@car.Year</ul>
                     }
                 </td>
 
                 <td class="center-align">
                     @foreach (var insurance in item.Insurances)
                     {
-                        <ul>@insurance.Price</ul>
+                    <ul>@insurance.Price</ul>
                     }
                 </td>
 
@@ -89,23 +89,23 @@
 
                 @if (item.Cars.Count >= 1)
                 {
-                    <td class="right-align">
-                        <a asp-page="./Cars/Index"
-                           class="btn-floating btn waves-effect waves-light white-text blue darken-2">
-                            <i class="material-icons">drive_eta</i>
-                        </a>
-                    </td>
+                <td class="right-align">
+                    <a asp-page="./Cars/Index"
+                       class="btn-floating btn waves-effect waves-light white-text blue darken-2">
+                        <i class="material-icons">drive_eta</i>
+                    </a>
+                </td>
                 }
 
 
                 @if (item.Cars.Count >= 1)
                 {
-                    <td class="right-align">
-                        <a asp-page="./Cars/Index"
-                           class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
-                            <i class="material-icons">payment</i>
-                        </a>
-                    </td>
+                <td class="right-align">
+                    <a asp-page="./Cars/Index"
+                       class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
+                        <i class="material-icons">payment</i>
+                    </a>
+                </td>
                 }
 
 

@@ -36,19 +36,19 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Cars)
+            @foreach (var item in Model.CustomersCars)
             {
             <tr>
                 <td>@item.Brand</td>
                 <td>@item.Model</td>
                 <td>@item.Year</td>
-
-                <!--Falta cargar información del cliente-->
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
 
                 <td>
                     <a asp-route-id="@item.Id"
                        asp-page="Edit"
-                       class="btn-floating btn waves-effect waves-light white-text blue darken-2 ">
+                       class="btn-floating btn waves-effect waves-light white-text blue darken-2 centrar">
                         <i class="material-icons">edit</i>
                     </a>
                 </td>
@@ -57,20 +57,30 @@
                     <button type="submit"
                             asp-page-handler="delete"
                             asp-route-id="@item.Id"
-                            class="btn-floating btn waves-effect waves-light white-text blue darken-2">
+                            class="btn-floating btn waves-effect waves-light white-text blue darken-2 centrar">
                         <i class="material-icons">delete_forever</i>
                         >
                     </button>
                 </td>
 
-
+                @if (DateTime.Today.AddTicks(-@item.BirthDay.Ticks).Year - 1 < 16)
+                {
+                    <td>
+                        <span>No aplica</span>
+                    </td>
+                }
+                else
+                {
                     <td>
                         <a asp-route-carid="@item.Id"
                            asp-page="../Insurances/Add"
-                           class="waves-effect pulse waves-light btn white-text blue darken-2">
+                           class="waves-effect pulse waves-light btn white-text blue darken-2 centrar">
                             Confirm quote
                         </a>
                     </td>
+                }
+
+
 
             </tr>
             }

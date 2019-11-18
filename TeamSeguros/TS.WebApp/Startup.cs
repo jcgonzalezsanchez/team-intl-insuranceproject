@@ -41,7 +41,7 @@ namespace TS.WebApp
             services.AddScoped<InsuranceStore>();
 
             services.AddDbContext<TSContext>(opt =>
-            opt.UseSqlServer(Configuration.GetConnectionString("TeamSeguros"),
+            opt.UseSqlServer(Configuration.GetConnectionString("TglSQL"),
             sqlServerOptionsAction: sqlOptions =>
             {
                 sqlOptions.EnableRetryOnFailure(

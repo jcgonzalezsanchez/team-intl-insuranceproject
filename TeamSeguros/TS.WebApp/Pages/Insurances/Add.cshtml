@@ -12,11 +12,13 @@
 
 <div class="row center-align">
     <form method="post" class="col s12">
-        <input hidden asp-for="@Model.Car.CustomerId" />
+        <input hidden asp-for="@Model.CustomerId" />
+        <input hidden asp-for="@Model.CarId" />
         <div>
             <div class="row">
                 <div class="input-field col s12 m8 l12">
-                    <input asp-for="@Model.TotalAPagar" />
+                    <input value="@Model.TotalAPagar.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))" />
+                    <input hidden asp-for="@Model.TotalAPagar"/>
                     <label for="brand">Price</label>
                 </div>
             </div>
